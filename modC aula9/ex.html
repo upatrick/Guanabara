@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 id="title">Iniciando estudos DOM</h1>
+        <p>Aqui vai o resultado</p>
+        <p>Apendendo a usar o <strong>Dom</strong> em JavaScript</p>
+        <div id="click">Clique em mim</div>
+        <script>
+            var bg = document.body;
+            bg.style.background = "blue";
+
+            let list = document.getElementsByTagName("p");
+            for (let p of list) {
+                p.style.background = "green";
+            }
+
+            var title = document.getElementById("title");
+            title.style.background = "grenn";
+            title.innerHTML = "oi";
+        </script>
+    </body>
+</html>
