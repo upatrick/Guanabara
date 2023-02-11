@@ -12,15 +12,19 @@ function multiplicar() {
     x9 = num * 9;
     x10 = num * 10;
 
-    res.innerHTML = `${num} x1 = ${x1} <br>
-    ${num} x 2 = ${x2} <br>
-    ${num} x 3 = ${x3} <br>
-    ${num} x 4 = ${x4} <br>
-    ${num} x 5 = ${x5} <br>
-    ${num} x 6 = ${x6} <br>
-    ${num} x 7 = ${x7} <br>
-    ${num} x 8 = ${x8} <br>
-    ${num} x 9 = ${x9} <br>
-    ${num} x 10 = ${x10}
-    `;
+    if (num == 0) {
+        alert("Digite um valor valido!");
+    } else {
+        res.innerHTML = `${num} x1 = ${x1} <br>
+        ${num} x 2 = ${x2} <br>
+        ${num} x 3 = ${x3} <br>
+        ${num} x 4 = ${x4} <br>
+        ${num} x 5 = ${x5} <br>
+        ${num} x 6 = ${x6} <br>
+        ${num} x 7 = ${x7} <br>
+        ${num} x 8 = ${x8} <br>
+        ${num} x 9 = ${x9} <br>
+        ${num} x 10 = ${x10}
+        `;
+    }
 }
