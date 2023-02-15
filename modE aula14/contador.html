@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contador</title>
+        <style>
+            body {
+                background: rgb(90, 90, 187);
+                font: normal 15pt Arial;
+            }
+            header {
+                color: white;
+                text-align: center;
+            }
+            section {
+                background: white;
+                border-radius: 10px;
+                padding: 15px;
+                width: 500px;
+                margin: auto;
+                box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.39);
+            }
+            footer {
+                color: white;
+                text-align: center;
+                font-style: italic;
+            }
+            div {
+                /* text-align: center; */
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Tabuada</h1>
+        </header>
+        <section>
+            <div>
+                <label for="nmb">Início: </label>
+                <input type="number" id="inicio" value="1" /> <br />
+                <br />
+                <label for="nmb">Fim: </label>
+                <input type="number" id="fim" value="1" /><br />
+                <br />
+                <label for="nmb">Passo: </label>
+                <input type="number" id="passo" value="1" /><br />
+                <br />
+                <button onclick="Contar()">Contar</button>
+            </div>
+            <div id="res"></div>
+        </section>
+        <footer>
+            <p>© Trickão</p>
+        </footer>
+        <script>
+            function Contar() {
+                var res = document.getElementById("res");
+                var inicio = document.getElementById("inicio");
+                var fim = document.getElementById("fim");
+                var passo = document.getElementById("passo");
+                if (
+                    inicio.value.length == 0 ||
+                    fim.value.length == 0 ||
+                    passo.value.length == 0
+                ) {
+                    alert("Preencha valores válidos!");
+                    res.innerHTML = `Impossível contar!!`;
+                } else {
+                    res.innerHTML = `Contando:<br>`;
+                    let i = Number(inicio.value);
+                    let f = Number(fim.value);
+                    let p = Number(passo.value);
+                    if (p <= 0) {
+                        window.alert("Passo inválido! Considerando PASSO 1");
+                        p = 1;
+                    }
+
+                    if (i < f) {
+                        // Contagem crescente
+                        for (let c = i; c <= f; c += p) {
+                            res.innerHTML += ` ${c}👉 `;
+                        }
+                    } else {
+                        //Contagem regressiva
+                        for (let c = i; c >= f; c -= p) {
+                            res.innerHTML += ` ${c}👉 `;
+                        }
+                    }
+                    res.innerHTML += `🏁`;
+                }
+            }
+        </script>
+    </body>
+</html>
